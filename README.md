@@ -7,7 +7,6 @@ II. How to change the previous application in order to be a SPA (single page app
 
    - II.1 The response of the ajax request will return html fragments, and the javascript code only will replace the html content of the different zones. [See Application](http://twitterflightexample.gamal-mateo.cloudbees.net/main1.htm)
    - II.2 The response of the ajax request will return json objects, and the javascript code will make the following [See Application](http://twitterflightexample.gamal-mateo.cloudbees.net/main2.htm):
-
         * Use the json object to populate the Mustache templates
         * Generate the html fragments using Mustache
         * Replace the html content of the different zones
