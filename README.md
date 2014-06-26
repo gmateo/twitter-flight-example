@@ -1,12 +1,12 @@
 #Spring MVC - Thymeleaf - Bootstrap - Twitter Flight
 In this project we want to show:
 
-I. How to make a simple web application using [Spring MVC](http://projects.spring.io/spring-framework/), [Thymeleaf](http://www.thymeleaf.org/) and [Bootstrap](http://getbootstrap.com/); this application will be responsive and will use only one ajax call
+I. How to make a simple web application using [Spring MVC](http://projects.spring.io/spring-framework/), [Thymeleaf](http://www.thymeleaf.org/) and [Bootstrap](http://getbootstrap.com/); this application will be responsive and will use only one ajax call [See Application](http://twitterflightexample.gamal-mateo.cloudbees.net/main.htm)
 
 II. How to change the previous application in order to be a SPA (single page application). For this part we will use [Twitter Flight](http://flightjs.github.io/) because it provides us a way to mantain our code nicely separated and easy to make changes to the different components. We will make this using two ways:
 
-   - II.1 The response of the ajax request will return html fragments, and the javascript code only will replace the html content of the different zones.
-    - II.2 The response of the ajax request will return json objects, and the javascript code will make the following:
+   - II.1 The response of the ajax request will return html fragments, and the javascript code only will replace the html content of the different zones. [See Application](http://twitterflightexample.gamal-mateo.cloudbees.net/main1.htm)
+   - II.2 The response of the ajax request will return json objects, and the javascript code will make the following [See Application](http://twitterflightexample.gamal-mateo.cloudbees.net/main.htm):
         * Use the json object to populate the Mustache templates
         * Generate the html fragments using Mustache
         * Replace the html content of the different zones
