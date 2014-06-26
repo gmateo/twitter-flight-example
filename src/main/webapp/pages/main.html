@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      class="csstransforms csstransforms3d csstransitions">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="description" content="twitter flight example"/>
+    <meta name="author" content=""/>
+    <title>Twitter Flight Example</title>
+    <meta content='twitter,flight,example' name='keywords'/>
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]>
+    <script src="js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="/bower_components/twitterflightexample/twitterflighexample.css"/>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="/bower_components/bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/bower_components/bootstrap/css/bootstrap-responsive.min.css"/>
+    <link rel="stylesheet" href="/bower_components/nprogress/nprogress.css"/>
+</head>
+
+<body>
+<div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Twitter Flight Example</a>
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="main.htm">Simple Application</a></li>
+                <li class=""><a href="main1.htm">Single Page Application I</a></li>
+                <li class=""><a href="main2.htm">Single Page Application II</a></li>
+            </ul>
+        </div>
+        <!-- /.nav-collapse -->
+    </div>
+    <!-- /.container -->
+</div>
+<!-- /.navbar -->
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-2"></div>
+        <div id="search-zone" class="col-sm-8">
+            <form class="navbar-form navbar-left" role="search" action="/main.htm">
+                <div class="input-group">
+                    <!-- /btn-group -->
+                    <input type="text" id="value" name="value" class="form-control" placeholder="Search"/>
+                    <input type="hidden" id="filter" name="filter" value="name"/>
+                    <span class="input-group-btn">
+                        <button id="btnSearch" type="submit" class="btn btn-default">
+                            <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                    </span>
+                </div>
+                <!-- /input-group -->
+            </form>
+        </div>
+        <div class="col-sm-2"></div>
+    </div>
+    <div class="row">
+        <div class="col-sm-3 col-sm-offset-1 nopadding" id="sidebar" role="navigation">
+            <div class="panel-group" id="brand-zone">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                                Brands</a>
+                        </h4>
+                    </div>
+                    <div id="collapseOne" class="panel-collapse collapse in">
+                        <div class="panel-collapse collapse in" th:each="brand : ${brandList}">
+                            <ul class="list-group">
+                                <li class="list-group-item">
+                                    <a href="#"
+                                       th:href="@{main.htm?(filter=brand,value=${brand.id})}"
+                                       th:text="${brand.description}">Accesorias y Belleza</a>
+                                    <span class="badge" th:text="${brand.nbr}">42</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/span-->
+
+        <div class="col-sm-8 nopadding">
+            <div class="container-fluid">
+                <ol id="breadcrumb-zone" class="breadcrumb">
+                    <li th:each="filterEntry : ${filterList}"
+                        th:class="${filterEntryStat.count}==${filterEntryStat.size}?'active'">
+                        <a href="#" th:href="@{main.htm?(filter=breadcrumbIdx,value=${filterEntryStat.count}-1)}"
+                           th:text="${filterEntry.value}"
+                           th:if="${filterEntryStat.count}!=${filterEntryStat.size}">
+                            Home</a>
+                    <span th:text="${filterEntry.value}"
+                          th:if="${filterEntryStat.count}==${filterEntryStat.size}">
+                        Name2</span>
+                    </li>
+                </ol>
+                <div id="product-zone" class="panel panel-default">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-sm-8">
+                                <h4 id="product-list-title" class="panel-title">&nbsp;&nbsp;&nbsp;&nbsp;Mostrando
+                                    <span th:text="${pageInfo.currentRangeStr}">1-5</span> de
+                                    <span th:text="${pageInfo.productsNbr}">1000</span>
+                                </h4>
+                            </div>
+                            <div class="col-sm-4">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-body nopadding">
+                        <div id="product-list-zone">
+                            <div class="list-group">
+                                <div class="list-group-item media-hover" th:attr="data-product-gkey=${product.gkey}"
+                                     th:each="product : ${products}">
+                                    <div class="media">
+                                        <a class="pull-left" href="#">
+                                            <img class="media-object" data-src="holder.js/64x64" alt="64x64"
+                                                 src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2NCIgaGVpZ2h0PSI2NCI+PHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiBmaWxsPSIjZWVlIj48L3JlY3Q+PHRleHQgdGV4dC1hbmNob3I9Im1pZGRsZSIgeD0iMzIiIHk9IjMyIiBzdHlsZT0iZmlsbDojYWFhO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1zaXplOjEycHg7Zm9udC1mYW1pbHk6QXJpYWwsSGVsdmV0aWNhLHNhbnMtc2VyaWY7ZG9taW5hbnQtYmFzZWxpbmU6Y2VudHJhbCI+NjR4NjQ8L3RleHQ+PC9zdmc+"
+                                                 style="width: 64px; height: 64px;"
+                                                 th:src="'/img/' +${product.imageUrl}"/>
+                                        </a>
+
+                                        <div class="media-body" style="text-align:left ">
+                                            <h4 class="media-heading" style="text-align:left" th:text="${product.name}">
+                                                Product Name</h4>
+
+                                            <div>
+                                                <ul class="list-inline">
+                                                    <li>
+                                                        Price:
+                                                        <strong th:text="${product.price}? ${#numbers.formatDecimal(product.price, 0, 'COMMA', 2, 'POINT')}">123
+                                                            456</strong>
+                                                    </li>
+                                                    <li>
+                                                        Brand:<strong th:text="${product.brand}">ID</strong>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="container-fluid">
+                                                <div class="row">
+                                                    <div class="col-sm-8">
+                                                        <a class="pull-left cursorpointer"
+                                                           th:onclick="'javascript:showMoreInfo(this,\'' + ${product.gkey} + '\');'">
+                                                            <span th:id="spn+${product.gkey}">Expand</span>
+                                                        </a>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <p class="collapse"></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="paginator-zone" th:attr="class=${pageInfo.totalPages lt 2 ? 'hidden' : ''}">
+                    <ul id="paginator"></ul>
+                    <input type="hidden" id="txtTotalPages" th:value="${pageInfo.totalPages}"/>
+                </div>
+            </div>
+        </div>
+
+        <!--/span-->
+
+    </div>
+    <!--/row-->
+
+    <hr/>
+
+    <footer>
+        <div class="row">
+            <div class="col-lg-12">
+                <ul class="list-unstyled">
+                    <li><p>&copy; ANotes 2014</p></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</div>
+<!--/.container-->
+
+
+<!-- JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="/bower_components/jquery/jquery.min.js"></script>
+<script src="/bower_components/bootstrap/js/bootstrap.min.js"></script>
+<script src="/bower_components/bootstrap/js/bootstrap-paginator.min.js"></script>
+<script src="/bower_components/nprogress/nprogress.js"></script>
+<script th:inline="javascript">
+    /*<![CDATA[*/
+    var options = {
+        bootstrapMajorVersion: 3,
+        currentPage: [[${pageInfo.page}]],
+        totalPages: [[${pageInfo.totalPages}]],
+        numberOfPages: 10,
+        onPageClicked: function (e, originalEvent, type, page) {
+            window.location.href = "/main.htm?page=" + (page - 1);
+        }
+    };
+    /*]]>*/
+</script>
+<script>
+    $(document).ready(function () {
+        $('#paginator').bootstrapPaginator(options);
+    });
+
+    function showMoreInfo(obj, productGkey) {
+        var $this = $(obj);
+        var $collapse = $this.closest('.media-body').find('.collapse');
+        var dataString = 'product=' + productGkey;
+        var spanId = '#spn' + productGkey;
+        var currentText = $(spanId).text();
+        if (currentText == "Expand") {
+            $(spanId).text("Collapse")
+            $.ajax({
+                type: "GET",
+                url: "/getProductInfo.htm",
+                data: dataString,
+                success: function (data) {
+                    $collapse.html(data);
+                    $collapse.collapse('toggle');
+                }
+            });
+        } else {
+            $(spanId).text("Expand");
+            $collapse.collapse('toggle');
+        }
+        return false;
+    }
+
+    $(document).ajaxStart(function () {
+        NProgress.start();
+    });
+
+    $(document).ajaxComplete(function () {
+        NProgress.done();
+    });
+</script>
+</body>
+</html>

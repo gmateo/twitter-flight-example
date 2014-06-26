@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      class="csstransforms csstransforms3d csstransitions">
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                Brands</a>
+        </h4>
+    </div>
+    <div id="collapseOne" class="panel-collapse collapse in">
+        <div class="panel-collapse collapse in" th:each="brand : ${brandList}">
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <a href="#"
+                       th:attr="data-brand-id=${brand.id}"
+                       th:text="${brand.description}">Accesorias y Belleza</a>
+                    <span class="badge" th:text="${brand.nbr}">42</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+</html>

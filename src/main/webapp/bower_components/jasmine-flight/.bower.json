@@ -1,0 +1,36 @@
+{
+    "name": "jasmine-flight",
+    "version": "2.2.0",
+    "description": "Extensions to the Jasmine test framework for use with Flight",
+    "main": "lib/jasmine-flight.js",
+    "dependencies": {
+        "jasmine-jquery": "~1.7.0"
+    },
+    "devDependencies": {
+        "flight": "~1.1.0"
+    },
+    "keywords": [
+        "flight",
+        "jasmine",
+        "test"
+    ],
+    "ignore": [
+        ".*",
+        "test",
+        "package.json",
+        "karma.conf.js",
+        "CONTRIBUTING.md",
+        "CHANGELOG.md"
+    ],
+    "homepage": "https://github.com/flightjs/jasmine-flight",
+    "_release": "2.2.0",
+    "_resolution": {
+        "type": "version",
+        "tag": "2.2.0",
+        "commit": "3af47a6febe2d27b71de234d9dcf47e1f7b2b7e5"
+    },
+    "_source": "git://github.com/flightjs/jasmine-flight.git",
+    "_target": "~2.2.0",
+    "_originalSource": "jasmine-flight",
+    "_direct": true
+}

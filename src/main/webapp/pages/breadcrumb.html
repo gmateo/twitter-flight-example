@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      class="csstransforms csstransforms3d csstransitions">
+<li th:each="filterEntry : ${filterList}"
+    th:class="${filterEntryStat.count}==${filterEntryStat.size}?'active'">
+    <a href="#"
+       th:attr="data-filter-idx=${filterEntryStat.count-1}"
+       th:text="${filterEntry.value}"
+       th:if="${filterEntryStat.count}!=${filterEntryStat.size}">
+        Home</a>
+   <span th:text="${filterEntry.value}"
+         th:if="${filterEntryStat.count}==${filterEntryStat.size}">
+       Name2</span>
+</li>
+</html>

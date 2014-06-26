@@ -1,0 +1,23 @@
+body {
+    position: relative;
+    top: 52px;
+}
+
+.cursorpointer {
+    cursor: pointer;
+}
+
+.panel-collapse > .list-group {
+    margin-bottom: 0;
+}
+
+.nopadding {
+    padding: 0 !important;
+    /*margin: 0 !important;*/
+}
+
+.media-hover:hover,
+.media-hover:focus {
+    background-color: #f5f5f5;
+    border-color: #f5f5f5;
+}

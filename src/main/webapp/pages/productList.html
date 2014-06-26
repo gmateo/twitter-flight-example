@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      class="csstransforms csstransforms3d csstransitions">
+<div class="panel-heading">
+    <div class="row">
+        <div class="col-sm-4">
+            <h4 id="product-list-title" class="panel-title">&nbsp;&nbsp;&nbsp;&nbsp;Mostrando
+                <span th:text="${pageInfo.currentRangeStr}">1-5</span> de
+                <span th:text="${pageInfo.productsNbr}">1000</span>
+            </h4>
+        </div>
+        <div class="col-sm-4">
+        </div>
+    </div>
+</div>
+<div class="panel-body nopadding">
+    <div id="product-list-zone">
+        <div class="list-group">
+            <div class="list-group-item media-hover" th:attr="data-product-gkey=${product.gkey}"
+                 th:each="product : ${products}">
+                <div class="media">
+                    <a class="pull-left" href="#">
+                        <img class="media-object" data-src="holder.js/64x64" alt="64x64"
+                             src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2NCIgaGVpZ2h0PSI2NCI+PHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiBmaWxsPSIjZWVlIj48L3JlY3Q+PHRleHQgdGV4dC1hbmNob3I9Im1pZGRsZSIgeD0iMzIiIHk9IjMyIiBzdHlsZT0iZmlsbDojYWFhO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1zaXplOjEycHg7Zm9udC1mYW1pbHk6QXJpYWwsSGVsdmV0aWNhLHNhbnMtc2VyaWY7ZG9taW5hbnQtYmFzZWxpbmU6Y2VudHJhbCI+NjR4NjQ8L3RleHQ+PC9zdmc+"
+                             style="width: 64px; height: 64px;"
+                             th:src="'/img/' +${product.imageUrl}"/>
+                    </a>
+
+                    <div class="media-body" style="text-align:left ">
+                        <h4 class="media-heading" style="text-align:left" th:text="${product.name}">
+                            Product Name
+                        </h4>
+
+                        <div>
+                            <ul class="list-inline">
+                                <li>
+                                    Price:
+                                    <strong th:text="${product.price}? ${#numbers.formatDecimal(product.price, 0, 'COMMA', 2, 'POINT')}">123
+                                        456</strong>
+                                </li>
+                                <li>
+                                    Brand:<strong th:text="${product.brand}">ID</strong>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-sm-8">
+                                    <a class="pull-left cursorpointer">
+                                        <span th:id="spn+${product.gkey}">Expand</span>
+                                    </a>
+                                </div>
+                                <div class="col-sm-4">
+                                </div>
+                            </div>
+                        </div>
+                        <p class="collapse"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</html>

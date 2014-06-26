@@ -1,0 +1,25 @@
+{
+    "name": "jasmine-flight",
+    "version": "2.2.0",
+    "description": "Extensions to the Jasmine test framework for use with Flight",
+    "main": "lib/jasmine-flight.js",
+    "dependencies": {
+        "jasmine-jquery": "~1.7.0"
+    },
+    "devDependencies": {
+        "flight": "~1.1.0"
+    },
+    "keywords": [
+        "flight",
+        "jasmine",
+        "test"
+    ],
+    "ignore": [
+        ".*",
+        "test",
+        "package.json",
+        "karma.conf.js",
+        "CONTRIBUTING.md",
+        "CHANGELOG.md"
+    ]
+}

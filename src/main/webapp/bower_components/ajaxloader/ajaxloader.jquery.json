@@ -1,0 +1,32 @@
+{
+    "name": "ajaxloader",
+    "title": "ajaxloader",
+    "description": "This is a jQuery plugin to show a loader on every ajax hit on the server with different themes.",
+    "keywords": [
+        "ajax",
+        "loader",
+        "loading"
+    ],
+    "version": "0.1.5",
+    "author": {
+        "name": "Mohit K Singh"
+    },
+    "maintainers": [
+        {
+            "name": "Mohit K Singh",
+            "email": "mohit.singh2090@gmail.com"
+        }
+    ],
+    "licenses": [
+        {
+            "type": "MIT",
+            "url": "https://github.com/Mohit-Singh/ajaxloader/blob/master/LICENSE"
+        }
+    ],
+    "bugs": "https://github.com/Mohit-Singh/ajaxloader/issues",
+    "homepage": "https://github.com/Mohit-Singh/ajaxloader",
+    "docs": "https://github.com/Mohit-Singh/ajaxloader/blob/master/README.md",
+    "dependencies": {
+        "jquery": ">=1.8"
+    }
+}
