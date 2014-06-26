@@ -12,7 +12,7 @@ II. How to change the previous application in order to be a SPA (single page app
         * Replace the html content of the different zones
 
 
-#Application description
+##Application description
 The application will be simple and contain the following characteristics:
 
 - Show products and its price history
@@ -22,7 +22,7 @@ The application will be simple and contain the following characteristics:
 
 You can see the application [here](http://twitterflightexample.gamal-mateo.cloudbees.net/main.htm)
 
-#Notes
+##Notes
 
    - The application use **gradle** so you can execute with the command:
          `gradle jettyRun`
