@@ -1,7 +1,7 @@
 #Spring MVC - Thymeleaf - Bootstrap - Twitter Flight
 In this project we want to show:
 
-I. How to make a simple web application using [Spring MVC](http://projects.spring.io/spring-framework/), [Thymeleaf](http://www.thymeleaf.org/) and [Bootstrap](http://getbootstrap.com/); this application will be responsive and will use only one ajax call [See Application](http://twitterflightexample.gamal-mateo.cloudbees.net/main.htm)
+I. How to make a simple web application using [Spring MVC](http://projects.spring.io/spring-framework/), [Thymeleaf](http://www.thymeleaf.org/) and [Bootstrap](http://getbootstrap.com/); this application will be responsive and will use only one ajax call [See Blog Entry](http://www.apprenticeshipnotes.org/2014/06/spring-mvc-thymeleaf-bootstrap-i.html) | [See Application](http://twitterflightexample.gamal-mateo.cloudbees.net/main.htm)
 
 II. How to change the previous application in order to be a SPA (single page application). For this part we will use [Twitter Flight](http://flightjs.github.io/) because it provides us a way to mantain our code nicely separated and easy to make changes to the different components. We will make this using two ways:
 
@@ -31,3 +31,4 @@ You can see the application [here](http://twitterflightexample.gamal-mateo.cloud
        -   Spring = 4.1.0.BUILD-SNAPSHOT
        -   Thymeleaf = 2.1.3.RELEASE
        -   Jackson = 2.4.1
+       -   Bootstrap = 3.1.1
