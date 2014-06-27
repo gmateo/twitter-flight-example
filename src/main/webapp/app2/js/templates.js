@@ -33,7 +33,7 @@ define(
                 </span>\
             </li>';
 
-        var productsTitle = '&nbsp;&nbsp;&nbsp;&nbsp;Mostrando\
+        var productsTitle = '&nbsp;&nbsp;&nbsp;&nbsp;Showing\
             <span>{{currentRangeStr}}</span> de\
             <span>{{productsNbr}}</span>';
 
