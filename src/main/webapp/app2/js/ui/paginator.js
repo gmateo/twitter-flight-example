@@ -10,8 +10,6 @@ define(
 
         function paginator() {
             this.defaultAttrs({
-                txtSelector: '#txtSearch',
-                btnSelector: '#btnSearch',
                 options: {
                     bootstrapMajorVersion: 3,
                     currentPage: 1,
